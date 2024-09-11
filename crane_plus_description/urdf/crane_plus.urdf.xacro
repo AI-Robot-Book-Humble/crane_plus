@@ -24,6 +24,8 @@
   <xacro:arg name="read_temperatures" default="0" />
   <xacro:arg name="gz_control_config_package" default="" />
   <xacro:arg name="gz_control_config_file_path" default="" />
+  <xacro:arg name="endtip_offset_xyz" default="0 0 0" />
+  <xacro:arg name="endtip_offset_rpy" default="0 0 0" />
 
   <!-- Link to provide the location reference for the arm -->
   <link name="base_link"/>
@@ -42,6 +44,7 @@
   <xacro:property name="NAME_LINK_3" value="crane_plus_link3"/>
   <xacro:property name="NAME_LINK_4" value="crane_plus_link4"/>
   <xacro:property name="NAME_LINK_HAND" value="crane_plus_link_hand"/>
+  <xacro:property name="NAME_LINK_ENDTIP" value="crane_plus_link_endtip"/>
 
   <xacro:property name="NAME_JOINT_BASE" value="crane_plus_joint_base"/>
   <xacro:property name="NAME_JOINT_1" value="crane_plus_joint1"/>
@@ -49,6 +52,7 @@
   <xacro:property name="NAME_JOINT_3" value="crane_plus_joint3"/>
   <xacro:property name="NAME_JOINT_4" value="crane_plus_joint4"/>
   <xacro:property name="NAME_JOINT_HAND" value="crane_plus_joint_hand"/>
+  <xacro:property name="NAME_JOINT_ENDTIP" value="crane_plus_joint_endtip"/>
 
   <xacro:property name="M_PI" value="3.14159"/>
   <xacro:property name="TO_RADIAN" value="${M_PI / 180.0}"/>
@@ -73,12 +77,14 @@
     name_link_3="${NAME_LINK_3}"
     name_link_4="${NAME_LINK_4}"
     name_link_hand="${NAME_LINK_HAND}"
+    name_link_endtip="${NAME_LINK_ENDTIP}"
     name_joint_base="${NAME_JOINT_BASE}"
     name_joint_1="${NAME_JOINT_1}"
     name_joint_2="${NAME_JOINT_2}"
     name_joint_3="${NAME_JOINT_3}"
     name_joint_4="${NAME_JOINT_4}"
     name_joint_hand="${NAME_JOINT_HAND}"
+    name_joint_endtip="${NAME_JOINT_ENDTIP}"
 
     joints_vlimit="${JOINT_VELOCITY_LIMIT}"
     joint_1_lower_limit="${JOINT_1_LOWER_LIMIT}"
@@ -91,7 +97,9 @@
     joint_4_upper_limit="${JOINT_4_UPPER_LIMIT}"
     joint_hand_lower_limit="${JOINT_HAND_LOWER_LIMIT}"
     joint_hand_upper_limit="${JOINT_HAND_UPPER_LIMIT}"
-    use_camera="$(arg use_camera)">
+    use_camera="$(arg use_camera)"
+    endtip_offset_xyz="$(arg endtip_offset_xyz)"
+    endtip_offset_rpy="$(arg endtip_offset_rpy)">
     <origin xyz="0 0 0"/>
   </xacro:crane_plus>
 
