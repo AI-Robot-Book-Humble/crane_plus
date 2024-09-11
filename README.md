@@ -1,3 +1,36 @@
+# crane_plus for AI Robot Book (Kodansha, in Japanese)
+
+The endtip model is modified for the book.
+
+- Model with endtip
+  ```
+  ros2 launch crane_plus_description endtip_display.launch.py
+  ```
+
+- Real robot
+  - Without MoveIt
+    ```
+    ros2 launch crane_plus_examples no_moveit_demo.launch.py
+    ```
+  - Endtip added
+    ```
+    ros2 launch crane_plus_examples endtip_demo.launch.py 
+    ```
+
+- Simulation
+  - Without MoveIt
+    ```
+    ros2 launch crane_plus_gazebo no_moveit_crane_plus_with_table.launch.py 
+    ```
+  - Endtip added
+    ```
+    ros2 launch crane_plus_gazebo endtip_crane_plus_with_table.launch.py 
+    ```
+
+The following is the original README.
+
+----------------------------------
+
 # crane_plus
 
 [![industrial_ci](https://github.com/rt-net/crane_plus/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/crane_plus/actions?query=workflow%3Aindustrial_ci+branch%3Amaster)
