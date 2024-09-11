@@ -33,6 +33,7 @@ set(executable_list
   pick_and_place_tf
   color_detection
   aruco_detection
+  endtip_pick_and_place
 )
 foreach(loop_var IN LISTS executable_list)
   add_executable(${loop_var} src/${loop_var}.cpp)
