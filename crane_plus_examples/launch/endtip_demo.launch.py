@@ -50,13 +50,16 @@ def generate_launch_description():
     description_loader.endtip_offset_rpy = '0 -1.57 0'
     description = description_loader.load()
 
+    rviz_config_file = get_package_share_directory(
+            'crane_plus_moveit_config') + '/launch/endtip_run_move_group.rviz'
     move_group = IncludeLaunchDescription(
             PythonLaunchDescriptionSource([
                 get_package_share_directory('crane_plus_moveit_config'),
                 '/launch/run_move_group.launch.py']),
             condition=UnlessCondition(LaunchConfiguration('use_camera')),
             launch_arguments={
-                'loaded_description': description
+                'loaded_description': description,
+                'rviz_config_file': rviz_config_file
             }.items()
         )
 
