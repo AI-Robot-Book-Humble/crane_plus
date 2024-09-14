@@ -302,7 +302,7 @@
       </inertial>
     </link>
 
-    <!-- Tool Center Point for MoveIt -->
+    <!-- Endtip for MoveIt -->
     <joint name="${name_joint_endtip}" type="fixed">
       <origin xyz="${endtip_offset_xyz}" rpy="${endtip_offset_rpy}"/>
       <parent link="${name_link_4}"/>
