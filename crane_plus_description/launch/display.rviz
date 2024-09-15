@@ -91,6 +91,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        crane_plus_link_endtip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         crane_plus_link_hand:
           Alpha: 1
           Show Axes: false
@@ -109,7 +113,7 @@ Visualization Manager:
       Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: true
+        All Enabled: false
         base_link:
           Value: true
         crane_plus_base:
@@ -122,6 +126,8 @@ Visualization Manager:
           Value: true
         crane_plus_link4:
           Value: true
+        crane_plus_link_endtip:
+          Value: false
         crane_plus_link_hand:
           Value: true
         world:
@@ -139,6 +145,8 @@ Visualization Manager:
                 crane_plus_link2:
                   crane_plus_link3:
                     crane_plus_link4:
+                      crane_plus_link_endtip:
+                        {}
                       crane_plus_link_hand:
                         {}
       Update Interval: 0
